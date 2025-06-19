@@ -685,3 +685,49 @@ h6 {
         }
     }
 }
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+.navbar {
+    background-color: #1a1a1a;
+    padding: 10px 0;
+}
+.navbar-brand img {
+    height: 40px;
+}
+.nav-link {
+    color: #fff !important;
+    margin: 0 10px;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: #ffcc00 !important;
+}
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+.movie-section {
+    padding: 20px 0;
+    background-color: #fff;
+}
+.movie-card {
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+.movie-card:hover {
+    transform: scale(1.05);
+}
+.movie-card img {
+    height: 250px;
+    object-fit: cover;
+}
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
+}

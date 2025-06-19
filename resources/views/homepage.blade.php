@@ -12,167 +12,178 @@
 {{-- Đặt class cho body --}}
 @section('page', 'home-page')
 @section('content')
-    <main class="main">
-        {{-- <section class="product">
-            <div class="container">
-                <div class="product__list owl-carousel owl-theme">
-                    <div class="item">
-                        <h4>1</h4>
-                    </div>
-                    <div class="item">
-                        <h4>2</h4>
-                    </div>
-                    <div class="item">
-                        <h4>3</h4>
-                    </div>
-                    <div class="item">
-                        <h4>4</h4>
-                    </div>
-                    <div class="item">
-                        <h4>5</h4>
-                    </div>
-                    <div class="item">
-                        <h4>6</h4>
-                    </div>
-                    <div class="item">
-                        <h4>7</h4>
-                    </div>
-                    <div class="item">
-                        <h4>8</h4>
-                    </div>
-                    <div class="item">
-                        <h4>9</h4>
-                    </div>
-                    <div class="item">
-                        <h4>10</h4>
-                    </div>
-                    <div class="item">
-                        <h4>11</h4>
-                    </div>
-                    <div class="item">
-                        <h4>12</h4>
-                    </div>
+    <!-- Carousel -->
+    <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/1200x400?text=Phim+Nổi+Bật+1" class="d-block w-100" alt="Phim Nổi Bật 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Phim Nổi Bật 1</h5>
+                    <p>Xem ngay hôm nay với chất lượng Full HD!</p>
                 </div>
             </div>
-        </section> --}}
-        {{-- <section class="py-5 feedback">
-            <div class="py-0 py-md-4 my-0 my-md-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="feedback__title mb-4 pb-2">
-                            <h2 class="line-bottom color-9 fw-6">
-                                ĐÁNH GIÁ CỦA <span class="color-6">KHÁCH HÀNG</span>
-                            </h2>
-                        </div>
-                    </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/1200x400?text=Phim+Nổi+Bật+2" class="d-block w-100"
+                    alt="Phim Nổi Bật 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Phim Nổi Bật 2</h5>
+                    <p>Thuyết minh lồng tiếng cực chất!</p>
                 </div>
-                <div class="feedback__slide">
-                    <div class="feedback__slide__list owl-carousel owl-theme">
-                        <div class="feedback__slide__list__item bg-color-10 p-4 h-100 col fs-7">
-                            <div class="feedback__slide__list__item__content">
-                                <p>" Nhân viên công ty bạn làm việc rất chuyên nghiệp. "</p>
-                            </div>
-                            <div
-                                class="feedback__slide__list__item__info d-flex align-items-center justify-content-between">
-                                <div>
-                                    <img class="w-auto h-auto" src="/images/hero-1.jpg" alt="">
-                                </div>
-                                <div class="flex-grow-1 ms-2">
-                                    <h6 class="fw-4">Công ty SPCL (Malaysia)</h6>
-                                    <p class="my-1">Giám đốc, Mr. Juzaidie</p>
-                                    <p class="fw-4">Dự án setup phòng sơn công ty DENESE Thái Nguyên</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feedback__slide__list__item bg-color-10 p-4 h-100 col fs-7">
-                            <div class="feedback__slide__list__item__content">
-                                <p>" Nhân viên công ty bạn làm việc rất chuyên nghiệp. "</p>
-                            </div>
-                            <div
-                                class="feedback__slide__list__item__info d-flex align-items-center justify-content-between">
-                                <div>
-                                    <img class="w-auto h-auto" src="/images/hero-1.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/1200x400?text=Phim+Nổi+Bật+3" class="d-block w-100"
+                    alt="Phim Nổi Bật 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Phim Nổi Bật 3</h5>
+                    <p>Cập nhật mới nhất 2025!</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
-                                </div>
-                                <div class="flex-grow-1 ms-2">
-                                    <h6 class="fw-4">Công ty VICCO</h6>
-                                    <p class="my-1">Giám đốc, Mr.Trần Mạnh Tùng</p>
-                                    <p class="fw-4">Dự án lắp ráp băng tải</p>
-                                </div>
-                            </div>
+    <!-- Phim Mới Section -->
+    {{-- <div class="movie-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Phim Mới Cập Nhật</h2>
+            <div class="row" id="movieList">
+                <div class="col-md-3">
+                    <div class="card movie-card" data-genre="hanh-dong" data-country="my" onclick="showMovieDetail(1)">
+                        <img src="https://via.placeholder.com/200x250?text=Phim+Mới+1" class="card-img-top" alt="Phim Mới 1">
+                        <div class="card-body text-center">
+                            <h6>Phim Mới 1</h6>
+                            <p class="text-muted">Thể loại: Hành Động</p>
                         </div>
-                        <div class="feedback__slide__list__item bg-color-10 p-4 h-100 col fs-7">
-                            <div class="feedback__slide__list__item__content">
-                                <p>" Chúng Tôi rất yên tâm về sản phẩm của các bạn. "</p>
-                            </div>
-                            <div
-                                class="feedback__slide__list__item__info d-flex align-items-center justify-content-between">
-                                <div>
-                                    <img class="w-auto h-auto" src="./images/hero-2.jpg" alt="">
-                                </div>
-                                <div class="flex-grow-1 ms-2">
-                                    <h6 class="fw-4">Công ty Vĩnh Tường</h6>
-                                    <p class="my-1">Giám đốc, Mr. Khánh</p>
-                                    <p class="fw-4">Dự án chế tạo hệ thống cấp tấm</p>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card movie-card" data-genre="tinh-cam" data-country="han-quoc" onclick="showMovieDetail(2)">
+                        <img src="https://via.placeholder.com/200x250?text=Phim+Mới+2" class="card-img-top" alt="Phim Mới 2">
+                        <div class="card-body text-center">
+                            <h6>Phim Mới 2</h6>
+                            <p class="text-muted">Thể loại: Tình Cảm</p>
                         </div>
-                        <div class="feedback__slide__list__item bg-color-10 p-4 h-100 col fs-7">
-                            <div class="feedback__slide__list__item__content">
-                                <p>"Chúng tôi đánh giá cao về dịch vụ của các bạn "</p>
-                            </div>
-                            <div
-                                class="feedback__slide__list__item__info d-flex align-items-center justify-content-between">
-                                <div>
-                                    <img class="w-auto h-auto" src="./images/hero-3.jpg" alt="">
-                                </div>
-                                <div class="flex-grow-1 ms-2">
-                                    <h6 class="fw-4">Công ty CNC-Vina</h6>
-                                    <p class="my-1">Phó GĐ, Mr. Vũ Đình Minh</p>
-                                    <p class="fw-4">Dự án lắp máy khẩu trang</p>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card movie-card" data-genre="kinh-di" data-country="trung-quoc" onclick="showMovieDetail(3)">
+                        <img src="https://via.placeholder.com/200x250?text=Phim+Mới+3" class="card-img-top" alt="Phim Mới 3">
+                        <div class="card-body text-center">
+                            <h6>Phim Mới 3</h6>
+                            <p class="text-muted">Thể loại: Kinh Dị</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card movie-card" data-genre="hai-huoc" data-country="viet-nam" onclick="showMovieDetail(4)">
+                        <img src="https://via.placeholder.com/200x250?text=Phim+Mới+4" class="card-img-top" alt="Phim Mới 4">
+                        <div class="card-body text-center">
+                            <h6>Phim Mới 4</h6>
+                            <p class="text-muted">Thể loại: Hài Hước</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </div>
+    </div> --}}
 
-        <section class="product py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <a href="/chi-tiet-san-pham" class="text-decoration-none">
-                            <div class="product__img">
-                                <img class="w-100" src="/images/1.png" alt="">
-                            </div>
-                            <div class="product__detail d-flex flex-column align-items-center">
-                                <div class="product__detail__name">
-                                    Bánh mô chi
-                                </div>
-                                <div class="product__detai__price">
-                                    15.000đ
-                                </div>
-                            </div>
-                        </a>
+    <!-- Phim Hot Section -->
+    {{-- <div class="movie-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Phim Hot</h2>
+            <div class="row" id="hotMovieList">
+                <div class="col-md-3">
+                    <div class="card movie-card" data-genre="hanh-dong" data-country="my" onclick="showMovieDetail(5)">
+                        <img src="https://via.placeholder.com/200x250?text=Phim+Hot+1" class="card-img-top" alt="Phim Hot 1">
+                        <div class="card-body text-center">
+                            <h6>Phim Hot 1</h6>
+                            <p class="text-muted">Đánh giá: 8.5/10</p>
+                        </div>
                     </div>
-                    <div class="col-lg-3">
-                        <a href="/chi-tiet-san-pham" class="text-decoration-none">
-                            <div class="product__img">
-                                <img class="w-100" src="/images/2.png" alt="">
-                            </div>
-                            <div class="product__detail d-flex flex-column align-items-center">
-                                <div class="product__detail__name">
-                                    Bánh mô chi
-                                </div>
-                                <div class="product__detai__price">
-                                    15.000đ
-                                </div>
-                            </div>
-                        </a>
+                </div>
+                <div class="col-md-3">
+                    <div class="card movie-card" data-genre="tinh-cam" data-country="han-quoc" onclick="showMovieDetail(6)">
+                        <img src="https://via.placeholder.com/200x250?text=Phim+Hot+2" class="card-img-top" alt="Phim Hot 2">
+                        <div class="card-body text-center">
+                            <h6>Phim Hot 2</h6>
+                            <p class="text-muted">Đánh giá: 7.9/10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card movie-card" data-genre="kinh-di" data-country="trung-quoc" onclick="showMovieDetail(7)">
+                        <img src="https://via.placeholder.com/200x250?text=Phim+Hot+3" class="card-img-top" alt="Phim Hot 3">
+                        <div class="card-body text-center">
+                            <h6>Phim Hot 3</h6>
+                            <p class="text-muted">Đánh giá: 9.0/10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card movie-card" data-genre="hai-huoc" data-country="viet-nam" onclick="showMovieDetail(8)">
+                        <img src="https://via.placeholder.com/200x250?text=Phim+Hot+4" class="card-img-top" alt="Phim Hot 4">
+                        <div class="card-body text-center">
+                            <h6>Phim Hot 4</h6>
+                            <p class="text-muted">Đánh giá: 8.2/10</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div> --}}
+
+    <!-- Phim Mới Section -->
+    <div class="movie-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Phim Mới Cập Nhật</h2>
+            <div class="row" id="movieList">
+                <!-- Dữ liệu sẽ được thêm động -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Phim Hot Section -->
+    <div class="movie-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Phim Hot</h2>
+            <div class="row" id="hotMovieList">
+                <!-- Dữ liệu sẽ được thêm động -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Movie Detail -->
+    <div class="modal fade" id="movieDetailModal" tabindex="-1" aria-labelledby="movieDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieDetailModalLabel">Chi Tiết Phim</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="detailImage" class="img-fluid mb-3" alt="Movie Image">
+                    <h6 id="detailTitle"></h6>
+                    <p><strong>Thể loại:</strong> <span id="detailGenre"></span></p>
+                    <p><strong>Quốc gia:</strong> <span id="detailCountry"></span></p>
+                    <p><strong>Đánh giá:</strong> <span id="detailRating"></span>/10</p>
+                    <p><strong>Mô tả:</strong> <span id="detailDescription"></span></p>
+                    <a href="#" id="detailWatchLink" class="btn btn-warning">Xem Phim</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 @endsection

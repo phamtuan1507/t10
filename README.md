@@ -1,61 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Chức năng chính:
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+-   Cung cấp nền tảng xem phim trực tuyến với hàng ngàn bộ phim, đa dạng thể loại (phim lẻ, phim bộ, hoạt hình, hành động, tình cảm, kinh dị, v.v.).
+-   Hỗ trợ phụ đề (Vietsub), thuyết minh, lồng tiếng với chất lượng Full HD.
+-   Cập nhật phim mới, phim chiếu rạp, phim bộ Hàn Quốc, Trung Quốc, Thái Lan, v.v.
+-   Tìm kiếm phim theo thể loại, quốc gia, năm sản xuất, hoặc từ khóa.
+-   Xếp hạng phim dựa trên IMDb, lượt xem, hoặc đánh giá người dùng.
+-   Giao diện thân thiện, tốc độ tải nhanh, hỗ trợ trên nhiều nền tảng (web, Android).
+    Cấu trúc nội dung:
+-   Phim được phân loại theo: thể loại, quốc gia, năm phát hành, trạng thái (hoàn thành, đang chiếu).
+    -   Mỗi phim có thông tin chi tiết: tiêu đề, mô tả, đạo diễn, diễn viên, thời lượng, tập phim (nếu là phim bộ), chất lượng video, link xem phim.
+    -   Người dùng có thể bình luận, đánh giá phim.
+    -   Hỗ trợ quảng cáo (liên hệ quảng cáo qua email).
+        Yêu cầu kỹ thuật:
+    -   Lưu trữ và quản lý số lượng lớn dữ liệu phim (metadata và video).
+    -   Tối ưu hóa tìm kiếm và truy xuất dữ liệu nhanh.
+    -   Hỗ trợ streaming video với nhiều định dạng và chất lượng.
+    -   Bảo mật thông tin người dùng (nếu có đăng ký/đăng nhập).
+    -   Khả năng mở rộng khi lượng người dùng hoặc phim tăng.
+    -   Thiết kế cơ sở dữ liệu: Dựa trên phân tích, tôi đề xuất một cơ sở dữ liệu quan hệ (Relational Database) sử dụng MySQL hoặc PostgreSQL, vì chúng phù hợp cho việc quản lý dữ liệu có cấu trúc và hỗ trợ truy vấn phức tạp. Dưới đây là schema cơ sở dữ liệu chi tiết:
 
-## About Laravel
+Giải thích schema cơ sở dữ liệu:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   movies: Lưu thông tin phim (tiêu đề, mô tả, năm phát hành, thời lượng, điểm IMDb, poster, trailer).
+-   genres, movie_genres: Quản lý thể loại phim (một phim có thể thuộc nhiều thể loại).
+-   countries, movie_countries: Quản lý quốc gia sản xuất phim.
+-   directors, movie_directors: Quản lý đạo diễn.
+-   actors, movie_actors: Quản lý diễn viên.
+-   episodes: Lưu thông tin tập phim cho phim bộ (mùa, số tập, link video, phụ đề, thuyết minh).
+-   users: Lưu thông tin người dùng (nếu có chức năng đăng ký/đăng nhập).
+-   reviews: Lưu đánh giá và bình luận của người dùng về phim.
+-   video_sources: Hỗ trợ nhiều nguồn video với các chất lượng khác nhau (720p, 1080p, 4K).
+-   advertisements: Quản lý quảng cáo hiển thị trên trang web.
+-   Indexes: Tối ưu hóa tìm kiếm theo tiêu đề, năm phát hành, và truy vấn liên quan đến phim/tập phim/đánh giá.
+    Lưu ý triển khai:
+    Lưu trữ video: Video nên được lưu trên dịch vụ đám mây như Amazon S3, Google Cloud Storage, hoặc CDN để đảm bảo tốc độ streaming. Chỉ lưu URL trong database.
+    Tìm kiếm nâng cao: Sử dụng công cụ như Elasticsearch để hỗ trợ tìm kiếm theo từ khóa, thể loại, hoặc quốc gia nhanh hơn.
+    Bảo mật: Mã hóa mật khẩu người dùng (dùng bcrypt), sử dụng HTTPS, và kiểm tra đầu vào để tránh SQL Injection.
+    Hiệu suất: Sử dụng caching (Redis/Memcached) để giảm tải database khi có nhiều người dùng truy cập.
+    Giao diện: Sử dụng framework như React/Vue.js cho frontend và Node.js/Django/Laravel cho backend.
+    Quảng cáo: Tích hợp Google AdSense hoặc quản lý quảng cáo tùy chỉnh qua bảng advertisements.
+    Khuyến nghị công nghệ:
+    Database: MySQL/PostgreSQL.
+    Backend: Node.js (Express), Python (Django/Flask), PHP (Laravel).
+    Frontend: React, Vue.js, hoặc Angular.
+    Streaming: HLS/DASH với Video.js hoặc JW Player.
+    Hosting: AWS, Google Cloud, hoặc VPS (DigitalOcean).
+    Tìm kiếm: Elasticsearch hoặc Algolia.
+    Caching: Redis.
+    Rủi ro pháp lý:
+    Trang web như ssphim.us có thể vi phạm bản quyền nếu không có giấy phép phát sóng phim. Hãy đảm bảo bạn có quyền phân phối nội dung hoặc sử dụng nội dung miễn phí hợp pháp (Creative Commons, Public Domain).
+    Liên hệ với các nhà cung cấp nội dung hoặc sử dụng API từ các dịch vụ như Netflix, IMDb để lấy dữ liệu hợp pháp.
